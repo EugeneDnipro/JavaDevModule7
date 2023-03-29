@@ -17,7 +17,7 @@ public class HttpStatusChecker {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         String responseCode = String.valueOf(response.statusCode());
-        if (responseCode.startsWith("4")){
+        if (responseCode.startsWith("4")) {
             throw new IllegalArgumentException("No such code is available");
         }
         return String.valueOf(response.uri());
